@@ -22,7 +22,6 @@ setup(
         'pandas',
         'tqdm',
         'Pillow',
-        'python-magic',
         'progressbar',
         'IPython',
         'opencv-python',
