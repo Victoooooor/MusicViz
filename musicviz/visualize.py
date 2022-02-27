@@ -90,7 +90,12 @@ class visualize(object):
                   "ind": index}
         queue.put(mapped)
 
-    def run(self, audio_path, outname):
+    def run(self, audio_path,
+            c1_path,
+            c2_path,
+            c3_path,
+            c4_path,
+            outname):
         self.y, self.sr = librosa.load(audio_path)
 
         frames = None
@@ -130,10 +135,10 @@ class visualize(object):
         A_cur = 0.0;
 
         stf = style_tf()
-        c1 = stf.load_img("./c1.jpg")
-        c2 = stf.load_img("./c2.jpg")
-        c3 = stf.load_img("./c3.jpg")
-        c4 = stf.load_img("./c4.jpg")
+        c1 = stf.load_img(c1_path)
+        c2 = stf.load_img(c2_path)
+        c3 = stf.load_img(c3_path)
+        c4 = stf.load_img(c4_path)
 
         stf.load_style([c1, c2, c3, c4])
 
