@@ -2,7 +2,6 @@ import librosa
 import numpy as np
 from tqdm import tqdm
 
-from musicviz.param import Param
 from musicviz.Emo_CNN import Emo
 from musicviz.visual_gan import vid_biggan
 from musicviz.style_transfer import style_tf
@@ -80,21 +79,15 @@ class visualize(object):
         A_pred = Emo()
         A_pred.load(param.Arousal_Path)
 
-        V_score, index = self.get_score(V_pred.model, self.y, self.sr)
-        A_score, _ = self.get_score(A_pred.model, self.y, self.sr)
+        V_score, index = self.get_score(V_pred.model)
+        A_score, _ = self.get_score(A_pred.model)
 
         mapped = {"V": V_score,
                   "A": A_score,
                   "ind": index}
         queue.put(mapped)
 
-    def run(self, audio_path,
-            param,
-            c1_path,
-            c2_path,
-            c3_path,
-            c4_path,
-            outname):
+    def run(self, audio_path, param, out_name):
         self.y, self.sr = librosa.load(audio_path)
 
         frames = None
@@ -106,7 +99,7 @@ class visualize(object):
 
         # spawn new process for biggan for lazy execution using graph
         biggan = multiprocessing.Process(target=self.run_vid, args=(shared_queue,))
-        emopred = multiprocessing.Process(target=self.run_emo, args=(shared_queue, param))
+        emopred = multiprocessing.Process(target=self.run_emo, args=(param, shared_queue))
         biggan.start()
         emopred.start()
         result_count = 0
@@ -134,10 +127,10 @@ class visualize(object):
         A_cur = 0.0;
 
         stf = style_tf()
-        c1 = stf.load_img(c1_path)
-        c2 = stf.load_img(c2_path)
-        c3 = stf.load_img(c3_path)
-        c4 = stf.load_img(c4_path)
+        c1 = stf.load_img(param.c1_path)
+        c2 = stf.load_img(param.c2_path)
+        c3 = stf.load_img(param.c3_path)
+        c4 = stf.load_img(param.c4_path)
 
         stf.load_style([c1, c2, c3, c4])
 
@@ -162,4 +155,4 @@ class visualize(object):
             elif A_cur < 0:
                 frames[ind] = np.array(stf.process(3, round(abs(A_cur[0]) * base_step)))
 
-        self.save(frames, outname)
+        self.save(frames, out_name)

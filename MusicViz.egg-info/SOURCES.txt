@@ -12,7 +12,6 @@ musicviz/__init__.py
 musicviz/feature.py
 musicviz/feature_meta.py
 musicviz/music_cluster.py
-musicviz/param.py
 musicviz/style_transfer.py
 musicviz/visual_gan.py
 musicviz/visualize.py
