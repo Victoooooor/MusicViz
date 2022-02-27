@@ -134,25 +134,25 @@ class visualize(object):
 
         stf.load_style([c1, c2, c3, c4])
 
-        base_step = 100
+
 
         for ind, frame in enumerate(tqdm(frames)):
-            if ind > index[window]:
+            if ind > scaled[window]:
                 window += 1
 
-            dif = index[window] - ind + 1
+            dif = scaled[window] - ind + 1
             V_cur += (V_score[window] - V_cur) / dif
             A_cur += (A_score[window] - A_cur) / dif
 
             stf.load_content(frame)
             if V_cur > 0:
-                frames[ind] = np.array(stf.process(0, round(abs(V_cur[0]) * base_step)))
+                frames[ind] = np.array(stf.process(0, round(abs(V_cur[0]) * param.base_step)))
             elif V_cur < 0:
-                frames[ind] = np.array(stf.process(1, round(abs(V_cur[0]) * base_step)))
+                frames[ind] = np.array(stf.process(1, round(abs(V_cur[0]) * param.base_step)))
 
             if A_cur > 0:
-                frames[ind] = np.array(stf.process(2, round(abs(A_cur[0]) * base_step)))
+                frames[ind] = np.array(stf.process(2, round(abs(A_cur[0]) * param.base_step)))
             elif A_cur < 0:
-                frames[ind] = np.array(stf.process(3, round(abs(A_cur[0]) * base_step)))
+                frames[ind] = np.array(stf.process(3, round(abs(A_cur[0]) * param.base_step)))
 
         self.save(frames, out_name)

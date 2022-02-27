@@ -16,6 +16,7 @@ class Param:
         self.c2_path = "./data/image/c2.jpg"
         self.c3_path = "./data/image/c3.jpg"
         self.c4_path = "./data/image/c4.jpg"
+        self.base_step = 50
 
 if __name__ == "__main__":
 
