@@ -8,6 +8,7 @@ from musicviz.Emo_CNN import Emo
 from musicviz.visual_gan import vid_biggan
 from musicviz.style_transfer import style_tf
 
+
 import moviepy.editor as mpy
 from moviepy.audio.AudioClip import AudioArrayClip
 import multiprocessing
@@ -90,10 +91,6 @@ if __name__ == "__main__":
     # name = './beethoven.mp3'
     name = "./Legends.wav"
     y, sr = librosa.load(name)
-
-
-
-
 
     frames = None
     V_score = None

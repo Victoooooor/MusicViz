@@ -71,10 +71,8 @@ class visualize(object):
         print("generated: ", len(frame), flush=True)
         queue.put({"frames":frame})
 
-    def run_emo(self, queue):
+    def run_emo(self, param, queue):
         print("Generate: Valence, Arousal", flush=True)
-
-        param = Param()
 
         V_pred = Emo()
         V_pred.load(param.Valance_Path)
@@ -91,6 +89,7 @@ class visualize(object):
         queue.put(mapped)
 
     def run(self, audio_path,
+            param,
             c1_path,
             c2_path,
             c3_path,
@@ -107,7 +106,7 @@ class visualize(object):
 
         # spawn new process for biggan for lazy execution using graph
         biggan = multiprocessing.Process(target=self.run_vid, args=(shared_queue,))
-        emopred = multiprocessing.Process(target=self.run_emo, args=(shared_queue,))
+        emopred = multiprocessing.Process(target=self.run_emo, args=(shared_queue, param))
         biggan.start()
         emopred.start()
         result_count = 0
