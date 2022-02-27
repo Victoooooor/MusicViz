@@ -22,11 +22,12 @@ setup(
         'pandas',
         'tqdm',
         'Pillow',
+        'python-magic',
         'progressbar',
         'IPython',
         'opencv-python',
         'keras',
-        'python-magic'
+        'moviepy',
         'pytorch_pretrained_biggan',
         'scikit_learn',
         'scipy',
