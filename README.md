@@ -1,2 +1,0 @@
-# MusicViz
-Music visualization
