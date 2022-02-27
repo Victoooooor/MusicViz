@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: MusicViz
+Version: 0.0.1
+Summary: MusicViz
+Home-page: UNKNOWN
+Author: Victor Zhang
+Author-email: <victorzh716@email.com>
+License: UNKNOWN
+Keywords: python,tensorflow,Music,Music visualization,Biggan,Style Transfer,GAN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Education
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Linux :: ArchLinux
+Classifier: Operating System :: Microsoft :: Windows
+License-File: LICENSE
+
+Music visualization using CNN predicting Valence Arousal -> biggan -> style Transform
+
