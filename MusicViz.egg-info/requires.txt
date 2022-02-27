@@ -9,8 +9,7 @@ progressbar
 IPython
 opencv-python
 keras
-python-magicmoviepy
-pytorch_pretrained_biggan
+python-magicpytorch_pretrained_biggan
 scikit_learn
 scipy
 umap_learn

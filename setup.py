@@ -27,7 +27,6 @@ setup(
         'opencv-python',
         'keras',
         'python-magic'
-        'moviepy',
         'pytorch_pretrained_biggan',
         'scikit_learn',
         'scipy',
