@@ -20,7 +20,7 @@ class Param:
 
 if __name__ == "__main__":
 
-    name = './beethoven.mp3'
+    name = './data/Test-Audio/beethoven.mp3'
     # name = "./data/Test-Audio/Legends.wav"
     param = Param()
     viz = visualize()
