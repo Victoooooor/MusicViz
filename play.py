@@ -3,6 +3,7 @@ import pyfirmata
 
 import cv2
 import numpy as np
+from cv2 import WINDOW_NORMAL
 from ffpyplayer.player import MediaPlayer
 
 n_channels = 5
@@ -24,8 +25,7 @@ if __name__ == "__main__":
     fps = video.get(cv2.CAP_PROP_FPS)
     total = int(video.get(cv2.CAP_PROP_FRAME_COUNT))
     wait = round(1000/fps)
-    video.release()
-    cv2.destroyAllWindows()
+
 
     length = dura * fps
     chroma_len = chroma.shape[1] - 1
@@ -42,17 +42,21 @@ if __name__ == "__main__":
             w = img.get_size()[0]
             h = img.get_size()[1]
             arr = np.uint8(np.asarray(list(img.to_bytearray()[0])).reshape(h,w,3))
-            cv2.imshow('test', arr)
+            arr2 = cv2.resize(arr,(1024, 1024), interpolation = cv2.INTER_AREA)
+            # cv2.namedWindow('test', WINDOW_NORMAL)
+            cv2.imshow('test', arr2)
+            # cv2.resizeWindow('test', 600, 600)
+
             if cv2.waitKey(10) & 0xFF == ord('q'):
                 cv2.destroyAllWindows()
                 break
             pos = round(index * window_map)
             pos %= chroma_len
             m1.write(180*chroma[0][pos])
-            m2.write(180 * chroma[1][pos])
+            m2.write(720 * chroma[1][pos])
             m3.write(180 * chroma[2][pos])
             m4.write(180 * chroma[3][pos])
-            m5.write(180 * chroma[4][pos])
+            m5.write(720 * chroma[4][pos])
             index += 1
 
     video.release()
