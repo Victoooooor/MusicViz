@@ -34,6 +34,6 @@ This project is an attempt to explore the various methods for **music feature ex
 
 ## Generated Output
 
-https://github.com/Victoooooor/MusicViz/blob/main/data/Generated-Videos/Bumblebee.mp4
+https://github.com/Victoooooor/MusicViz/blob/main/data/Generated-Videos/Bumblebee.mp4?raw=true
 
 
