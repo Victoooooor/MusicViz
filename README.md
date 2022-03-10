@@ -35,5 +35,4 @@ This project is an attempt to explore the various methods for **music feature ex
 ## Generated Output
 
 
-[![Youtube Vid](https://github.com/Victoooooor/MusicViz/blob/main/data/image/c3.jpg?raw=true)](https://youtu.be/C5sjTF1ENas))](https://youtu.be/C5sjTF1ENas)
-
+[![Youtube Vid](https://github.com/Victoooooor/MusicViz/blob/main/data/image/c3.jpg?raw=true)](https://youtu.be/C5sjTF1ENas)
