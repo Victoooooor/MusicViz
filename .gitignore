@@ -107,7 +107,5 @@ dmypy.json
 
 # Test audio
 *.wav
-*.mp3
 
 #output
-*.mp4
