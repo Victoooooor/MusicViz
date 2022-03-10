@@ -16,12 +16,12 @@ class Param:
         self.c2_path = "./data/image/c2.jpg"
         self.c3_path = "./data/image/c3.jpg"
         self.c4_path = "./data/image/c4.jpg"
-        self.base_step = 50
+        self.base_step = 25
 
 if __name__ == "__main__":
 
-    name = './data/Test-Audio/beethoven.mp3'
+    name = './Symphony.mp3'
     # name = "./data/Test-Audio/Legends.wav"
     param = Param()
     viz = visualize()
-    viz.run(name, param, "./out.mp4")
+    viz.run(name, param, "./Symphony.mp4")
