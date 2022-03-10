@@ -35,5 +35,5 @@ This project is an attempt to explore the various methods for **music feature ex
 ## Generated Output
 
 
-[![Youtube Vid](https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.openaccessgovernment.org%2Fwp-content%2Fuploads%2F2020%2F02%2Fyella-2.jpg&imgrefurl=https%3A%2F%2Fwww.openaccessgovernment.org%2Fbumble-bees-need-biodiversity%2F81996%2F&tbnid=uBK5Hhtgdr1t0M&vet=12ahUKEwiGmpmhuLz2AhVzqnIEHWRVCkkQMygBegUIARDgAQ..i&docid=rR3VGMoI1fFm_M&w=2000&h=1333&q=bumblebee&ved=2ahUKEwiGmpmhuLz2AhVzqnIEHWRVCkkQMygBegUIARDgAQ)](https://youtu.be/C5sjTF1ENas)
+[![Youtube Vid](https://github.com/Victoooooor/MusicViz/blob/main/data/image/c3.jpg?raw=true)](https://youtu.be/C5sjTF1ENas))](https://youtu.be/C5sjTF1ENas)
 
